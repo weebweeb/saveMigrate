@@ -2,7 +2,7 @@
 saveMigrate is a centralized saving module intended to make transition between legacy Datastore and DataStore2 save systems as painless as possible and with minimal data loss
 
 # Synopsis
-New Datastore solutions are too complicated to replace existing datastore entries reliably. This can lead to complete redesigns in code structure and in most cases, loss of data for users. This is not good. A proper solution is a system that can automate the migration of data from one save system to another. In this case this is from Roblox's classic DataStore system to kampfkarren's DataStore2 system. This system facilitates, automates and expedites the process of data migration and hybridization of both datastore methods.
+New Datastore solutions are too complicated to replace existing datastore entries reliably. This can lead to complete redesigns in code structure and in most cases, loss of data for users. This is not good. A proper solution is a system that can automate the migration of data from one save system to another. In this case this is from Roblox's classic DataStore system to kampfkarren's DataStore2 system. This system facilitates, automates and expedites the process of data migration and hybridization of both datastore methods. This system implements elements from both Datastore2 and legacy Datastore and combines them into one clear, consise wrapper which is both easy to use and implement into existing legacy datastore systems.
 
 # Functions
 
