@@ -67,7 +67,7 @@ In the event that the save fails (eg: another server is saving to the datastore 
 save the data until it is successful. Once it is successful it will return the updated value.
 
 Notice -
-if fun or Key is nil then UpdateAsync will return nil and abort
+if fun or Key is nil then UpdateAsync will return nil and abort  
 fun() should not yield, do not call wait() or delay() when defining it!
 
 
