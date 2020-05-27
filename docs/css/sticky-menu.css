@@ -50,19 +50,19 @@ html {
 }
 .about-section {
     height: 100%;
-    padding-top: 20px;
+    padding-top: 100px;
     text-align: center;
     background: #b2ebf0;
 }
 .whatwedo-section {
     height: 140%;
-    padding-top: 0px;
+    padding-top: 100px;
     text-align: center;
     background: #fff;
 }
 .contact-section {
     height: 100%;
-    padding-top: 50px;
+    padding-top: 100px;
     text-align: center;
     background: #b2ebf0;
 }
