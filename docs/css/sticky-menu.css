@@ -43,13 +43,13 @@ html {
     color: #FFF;
 }
 .welcome-section {
-    height: 100%;
+    height: 80%;
     padding-top: 150px;
     text-align: center;
     background: #fff;
 }
 .about-section {
-    height: 100%;
+    height: 80%;
     padding-top: 20px;
     text-align: center;
     background: #b2ebf0;
@@ -62,7 +62,7 @@ html {
 }
 .contact-section {
     height: 100%;
-    padding-top: 500px;
+    padding-top: 50px;
     text-align: center;
     background: #b2ebf0;
 }
