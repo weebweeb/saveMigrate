@@ -43,13 +43,13 @@ html {
     color: #FFF;
 }
 .welcome-section {
-    height: 50%;
+    height: 80%;
     padding-top: 150px;
     text-align: center;
     background: #fff;
 }
 .about-section {
-    height: 80%;
+    height: 100%;
     padding-top: 20px;
     text-align: center;
     background: #b2ebf0;
