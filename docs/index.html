@@ -141,14 +141,13 @@
 <p> In the event that the save fails (eg: another server is saving to the datastore at the same time,etc), updateAsync will preform a "Reliable Delivery" - this means it will continue to try to save the data until it is successful. Once it is successful it will return the updated value. </p>
 
 						<div class = "panel panel-danger">
-							<div class = "panel panel-heading"> </div>
+							<div class = "panel panel-heading"> <font size="+1"> Notice </font> </div>
 							<div class = "panel panel-body">
 								<p style = "color:red">
 								<font size="+1">
-								if fun or Key is nil then UpdateAsync will return nil and abort
+								if fun or Key is nil then UpdateAsync will return nil and abort.
 								</font>
 								</p>
-						
 								<p style = "color:red"> <font size="+1"> fun() should not yield, do not call wait() or delay() when defining it! </font> </p>
 							</div>
 						</div>
