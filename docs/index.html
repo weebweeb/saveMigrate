@@ -96,30 +96,30 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Instances</h1>
-			 <div class="panel panel-default">
+			 <div class="panel panel-group">
 			<div class="panel-heading"> <font size="+2"> migrationManager</font> </div>
 			<div class="panel-body"> 
-				 <div class = "panel panel-default">
+				 <div class = "panel panel-info">
 					 
 					 <div class "panel-heading"><font size="+1"><i> <span style = "color:red"> Variant </span> </i>  <span style = "color:red">migrationManager</span>:GetAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, ...)	</font> </div>
 					 <div class "panel-body">returns <i> Value </i>  from <i> Key </i>. Prefers DataStore2, uses <i>Player</i>, <i>name</i> and <i>scope</i> values from migrationManager instance. </div>
 				</div>
-				<div class = "panel panel-default">
+				<div class = "panel panel-info">
 					 
 					 <div class "panel-heading"><font size="+1"><i> <span style = "color:red"> Variant </span> </i>  <span style = "color:red">migrationManager</span>:SetAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, <i> <span style = "color:red"> variant </span> </i> <span style = "color:blue"> Value </span>, ...)	</font> </div>
 					<div class "panel-body">sets <i> Key </i> to <i>Value</i>, returns the updated Value. prefers Datastore2. Uses <i>Player</i>, <i>name</i> and <i>scope</i> values from migrationManager instance. </div>
 				</div>
-				<div class = "panel panel-default">
+				<div class = "panel panel-info">
 					 
 					 <div class "panel-heading"><font size="+1"><i> <span style = "color:red"> Variant </span> </i>  <span style = "color:red">migrationManager</span>:RemoveAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, ...)	</font> </div>
 					<div class "panel-body">Sets the Value of <i> Key</i> to a blank string ("") and returns the value it was set as, prefers Datastore2. Uses <i>Player</i>, <i>name</i> and <i>scope</i> values from migrationManager instance. </div>
 				</div>
-				<div class = "panel panel-default">
+				<div class = "panel panel-info">
 					 
 					 <div class "panel-heading"><font size="+1"><i> <span style = "color:red"> Variant </span> </i>  <span style = "color:red">migrationManager</span>:IncrementAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, <i> <span style = "color:red"> number </span> </i> <span style = "color:blue"> Delta </span>, ...)	</font> </div>
 					<div class "panel-body">adds <i>Delta</i> to the existing value under <i>Key</i> and returns the changed value. prefers Datastore2. Uses <i>Player</i>, <i>name</i> and <i>scope</i> values from migrationManager instance. </div>
 				</div>
-				<div class = "panel panel-default">
+				<div class = "panel panel-info">
 					 
 					 <div class "panel-heading"><font size="+1"><i> <span style = "color:red"> Variant </span> </i>  <span style = "color:red">migrationManager</span>:UpdateAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, <i> <span style = "color:red"> callbackFunction </span> </i> <span style = "color:blue"> fun </span>, ...)	</font> </div>
 					<div class "panel-body">
@@ -130,11 +130,16 @@
 <p> Callback function fun() will be called with the value of <i>Key</i> as parameters, expecting a returned value to update the key with. 
 <p> In the event that the save fails (eg: another server is saving to the datastore at the same time,etc), updateAsync will preform a "Reliable Delivery" - this means it will continue to try to save the data until it is successful. Once it is successful it will return the updated value. </p>
 
-
-<p style = "color:red">
-Notice - if fun or Key is nil then UpdateAsync will return nil and abort </p>
+						<div class = "panel panel-danger">
+							<div class = "panel panel-body">
+								<p style = "color:red">
+								Notice - if fun or Key is nil then UpdateAsync will return nil and abort </p>
 						
-<p style = "color:red"> fun() should not yield, do not call wait() or delay() when defining it!</p></div>
+								<p style = "color:red"> fun() should not yield, do not call wait() or delay() when defining it!</p>
+							</div>
+						</div>
+					
+					</div>
 				</div>
 			</div>	
 			</div>
