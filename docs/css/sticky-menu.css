@@ -50,9 +50,9 @@ html {
 }
 .about-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 20px;
     text-align: center;
-    background: #337AB;
+    background: #b2ebf0;
 }
 .whatwedo-section {
     height: 100%;
@@ -62,9 +62,9 @@ html {
 }
 .contact-section {
     height: 100%;
-    padding-top: 200px;
+    padding-top: 500px;
     text-align: center;
-    background: #337AB;
+    background: #b2ebf0;
 }
 .navbar-default .navbar-nav > li > a:hover {
 	color: #333;
