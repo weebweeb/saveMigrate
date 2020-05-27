@@ -66,8 +66,14 @@
                     
                    <div class="panel panel-default">
   			<div class="panel-heading"> 
-				<font size="+1"> <i> <span style = "color:red"> Variant </span> </i> migrationManager:getAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>,...)</div> </font>
-			<div class="panel-body">Panel Content</div>
+				<font size="+1"> <i> <span style = "color:red"> Variant </span> </i>  GetAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, <i> <span style = "color:red"> GlobalDataStore </span> </i> <i> <span style = "color:blue"> Store </span> </i> , <i> <span style = "color:red"> Player </span> </i> <i> <span style = "color:blue"> Player </span> </i>, ...)</div> </font>
+			   <div class="panel-body">returns <i>Value</i> from <i> Key</i>. Prefers DataStore2, if <i>Player</i> is nil then it will strictly use legacy DataStores. If <i> Store </i> is nil then it will strictly use Datastore2. If both <i> Store </i> and <i> Player</i> are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore</div>
+		</div>
+		
+			  <div class="panel panel-default">
+  			<div class="panel-heading"> 
+				<font size="+1"> <i> <span style = "color:red"> Variant </span> </i>  SetAsync( <i> <span style = "color:red"> string </span> </i> <span style = "color:blue"> Key </span>, <i> <span style = "color:red"> variant </span> </i> <span style = "color:blue"> Value </span>, <i> <span style = "color:red"> GlobalDataStore </span> </i> <i> <span style = "color:blue"> Store </span> </i> , <i> <span style = "color:red"> Player </span> </i> <i> <span style = "color:blue"> Player </span> </i>, ...)</div> </font>
+				  <div class="panel-body">sets <i>Key</i> to <i>Value</i>. Prefers DataStore2, if <i>Player</i> is nil then it will strictly use legacy DataStores. If <i> Store </i> is nil then it will strictly use Datastore2. If both <i> Store </i> and <i> Player</i> are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore</div>
 		</div>
                     
 
