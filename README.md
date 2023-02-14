@@ -9,19 +9,19 @@ New Datastore solutions are too complicated to replace existing datastore entrie
 
 ***Variant* GetAsync(*string* Key, *GlobalDataStore* Store,  *Player* Player, ...)**
 
-  returns Value from Key. Prefers DataStore2, if Player is nil then it will strictly use legacy DataStores. If Store is nil then it will strictly use Datastore2. If both Store and Player are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore
+  returns a value saved under `Key`. Prefers DataStore2, if `Player` is nil then it will strictly use legacy DataStores. If `Store` is nil then it will strictly use Datastore2. If both `Store` and `Player` are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore
 
 ***Variant* SetAsync(*string* Key, *variant* Value, *GlobalDataStore* Store,  *Player* Player, ...)**
   
-  sets Key to Value, prefers Datastore2. if Player is nil then it will strictly use legacy DataStores. If Store is nil then it will strictly use Datastore2. If both Store and Player are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore
+  sets `Key` to `Value`, prefers Datastore2. if `Player` is nil then it will strictly use legacy DataStores. If `Store` is nil then it will strictly use Datastore2. If both `Store` and `Player` are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore
 
 ***Instance* GetDataStore(*string* name, *string* scope, *Player* Player, ...)**
   
-  Returns a migrationManager instance similar to Roblox's GlobalDataStore instance. Said instance will reference either a GlobalDataStore or a DataStore2 instance depending on the arguments given. If player is undefined then it will strictly use legacy Datastores, if name is undefined then it will strictly use DataStore2. 
+  Returns a `migrationManager` instance similar to Roblox's GlobalDataStore instance. Said instance will reference either a GlobalDataStore or a DataStore2 instance depending on the arguments given. If `Player` is undefined then it will strictly use legacy Datastores, if `name` is undefined then it will strictly use DataStore2. 
 
-However, if both name and Player are given, the module will load from the datastore and save to the Datastore2 when possible under the player object. 
+However, if both `name` and `Player` are given, the module will load from legacy DataStore and save to Datastore2 when possible under the `Player` object. 
 
-The migrationManager instance will use this data in the functions it returns.
+The `migrationManager` instance will use this data in the functions it returns.
 
 
 
@@ -34,16 +34,16 @@ The migrationManager instance will use this data in the functions it returns.
 
 ***Variant* migrationManager:getAsync(*string* Key,...)**
   
-  returns Value from Key. Prefers DataStore2, uses player, name and scope values from migrationManager instance. 
+  returns a value from `Key`. Prefers DataStore2, uses `Player`, `name` and `scope` values from migrationManager instance. 
 
 
 ***Variant* migrationManager:SetAsync(*string* Key, *variant* Value, ...)**
   
-  sets Key to Value, prefers Datastore2, uses player, name and scope values from migrationManager instance. 
+  sets `Key` to `Value`, prefers Datastore2.
 
 ***Variant* migrationManager:RemoveAsync(*string* Key,  ...)**
   
-  Sets the Value of Key to a blank string ("") and returns the value it was set as.  Uses player, name and scope values from migrationManager instance. 
+  Sets the Value of `Key` to a blank string ("") and returns the value it was set as.
 
 
   note: This function cannot set values to nil because of problems that arise with DataStore2 when doing so
@@ -51,7 +51,7 @@ The migrationManager instance will use this data in the functions it returns.
 
 ***Variant* migrationManager:IncrementAsync(*string* Key, *number* Delta, ...)**
   
-  adds Delta to the existing value under Key and returns the changed value. Uses player, name and scope values from migrationManager instance. 
+  adds `Delta` to the existing value under `Key` and returns the changed value.
 
 
 
@@ -59,16 +59,15 @@ The migrationManager instance will use this data in the functions it returns.
   
   This function is functionally the same as GlobalDataStore:UpdateAsync() -
 
-This function will update the value of Key with the new value returned by callback function fun().
-Uses player, name and scope values from migrationManager instance. 
+This function will update the value of Key with the new value returned by callback function `fun()`. 
 
-Callback function fun() will be called with the value of Key as parameters, expecting a returned value to update the key with.
+Callback function `fun()` will be called with the value of `Key` as parameters, expecting a returned value to update the key with.
 In the event that the save fails (eg: another server is saving to the datastore at the same time,etc), updateAsync will preform a "Reliable Delivery" - this means it will continue to try to
 save the data until it is successful. Once it is successful it will return the updated value.
 
-Notice -
-if fun or Key is nil then UpdateAsync will return nil and abort  
-fun() should not yield, do not call wait() or delay() when defining it!
+Note-
+if `fun` or `Key` is nil then UpdateAsync will return nil and abort  
+`fun()` should be treated like a Promise and should not yield
 
 
 
