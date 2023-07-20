@@ -7,15 +7,15 @@ New Datastore solutions are too complicated to replace existing datastore entrie
 # Functions
 
 
-***Variant* GetAsync(*string* Key, *GlobalDataStore* Store,  *Player* Player, ...)**
+Variant: GetAsync(String: Key, GlobalDataStore: Store,  Player: Player, ...)
 
   returns a value saved under `Key`. Prefers DataStore2, if `Player` is nil then it will strictly use legacy DataStores. If `Store` is nil then it will strictly use Datastore2. If both `Store` and `Player` are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore
 
-***Variant* SetAsync(*string* Key, *variant* Value, *GlobalDataStore* Store,  *Player* Player, ...)**
+Variant: SetAsync(String: Key, Variant: Value, GlobalDataStore: Store,  Player: Player, ...)
   
   sets `Key` to `Value`, prefers Datastore2. if `Player` is nil then it will strictly use legacy DataStores. If `Store` is nil then it will strictly use Datastore2. If both `Store` and `Player` are defined, and a DataStore2 does not exist, then it will attempt to load from a legacy Datastore
 
-***Instance* GetDataStore(*string* name, *string* scope, *Player* Player, ...)**
+Instance: GetDataStore(String: name, String: scope, Player: Player, ...)
   
   Returns a `migrationManager` instance similar to Roblox's GlobalDataStore instance. Said instance will reference either a GlobalDataStore or a DataStore2 instance depending on the arguments given. If `Player` is undefined then it will strictly use legacy Datastores, if `name` is undefined then it will strictly use DataStore2. 
 
@@ -32,16 +32,16 @@ The `migrationManager` instance will use this data in the functions it returns.
 
 # migrationManager
 
-***Variant* migrationManager:getAsync(*string* Key,...)**
+Variant: migrationManager:getAsync(String: Key,...)
   
   returns a value from `Key`. Prefers DataStore2, uses `Player`, `name` and `scope` values from migrationManager instance. 
 
 
-***Variant* migrationManager:SetAsync(*string* Key, *variant* Value, ...)**
+Variant: migrationManager:SetAsync(String: Key, Variant: Value, ...)
   
   sets `Key` to `Value`, prefers Datastore2.
 
-***Variant* migrationManager:RemoveAsync(*string* Key,  ...)**
+Variant: migrationManager:RemoveAsync(String: Key,  ...)
   
   Sets the Value of `Key` to a blank string ("") and returns the value it was set as.
 
@@ -49,13 +49,13 @@ The `migrationManager` instance will use this data in the functions it returns.
   note: This function cannot set values to nil because of problems that arise with DataStore2 when doing so
 
 
-***Variant* migrationManager:IncrementAsync(*string* Key, *number* Delta, ...)**
+Variant: migrationManager:IncrementAsync(String: Key, Number: Delta, ...)
   
   adds `Delta` to the existing value under `Key` and returns the changed value.
 
 
 
-***Variant* migrationManager:UpdateAsync(*string* Key, *callbackFunction* fun, ...)**
+Variant: migrationManager:UpdateAsync(String: Key, Variant: fun, ...)
   
   This function is functionally the same as GlobalDataStore:UpdateAsync() -
 
